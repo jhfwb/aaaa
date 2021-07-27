@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 # coding=utf-8
+import os
+import sys
 import setuptools
 # sys.argv=['setup.py','sdist','bdist_wheel'] #将sys.argv的外部参数改成setup.py。相当于是运行python
-with open("README.md", 'r',encoding='UTF-8') as f:
+with open("README.md",'r',encoding='UTF-8') as f:
     long_description=f.read()
 setuptools.setup(
     name="pyPacking_xhr",#软件包名称
@@ -23,5 +25,4 @@ setuptools.setup(
     install_requires=[# 填写依赖包(github格式:  包名@git+https://github/jhfwb/包所在文件 )
     ],
     python_requires='>=3',
-    include_package_data=True
 )

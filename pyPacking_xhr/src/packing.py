@@ -71,7 +71,7 @@ class PackingTool:
         :return:
         """
         os.chdir(savePath)
-        import setup
+        os.system('python setup.py sdist bdist_wheel')
         pass
     def pack(self,pyPackage='',savePath='',options={'version':'1.0','description':'暂无软件简介信息'}):
         """创建打包环境

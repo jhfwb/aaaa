@@ -1,2 +1,2 @@
-include @xxx@/*
+global-include * /*注释*/
 
