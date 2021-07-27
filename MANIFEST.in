@@ -2,7 +2,6 @@ include README.md
 include LICENSE
 include MANIFEST.in
 
-include pyPacking_xhr/resouce *
-include pyPacking_xhr/script *
+recursive-include pyPacking_xhr/resouce *
+recursive-include pyPacking_xhr/script *
 
-global-exclude __pycache__ *.py[cod]
