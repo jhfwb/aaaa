@@ -24,5 +24,6 @@ setuptools.setup(
     ],
     install_requires=[# 填写依赖包(github格式:  包名@git+https://github/jhfwb/包所在文件 )
     ],
+    include_package_data=True,
     python_requires='>=3',
 )
