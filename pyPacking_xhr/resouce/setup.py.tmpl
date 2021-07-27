@@ -9,7 +9,7 @@ setuptools.setup(
     author="许焕燃",
     author_email='527077832@qq.com',
     description="@description@",
-    long_description=open('README.md.tmpl').read(),#详细描述
+    long_description=open('README.md',encoding='utf-8').read(),#详细描述
     long_description_content_type="text/markdown",#详细描述的格式
     # url="@xxx@@git+https://github/jhfwb/...", #模块的github地址
     packages=setuptools.find_packages(),
