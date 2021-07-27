@@ -19,6 +19,7 @@ class _createPackingFile:
         self.createMANIFESE()
         self.createREADME()
         self.createSETUP()
+        self.createGITIGNORE()
         #判断保存地址是不是当前地址，如果是，则不创建源码，如果不是，则要创建
         if not pyPackingName in os.listdir(saveDirPath):
             # 复制整个文件夹到指定目录
@@ -26,17 +27,19 @@ class _createPackingFile:
         else:
             pass
 
-    def _createFile(self,fileName='LICENSE' or 'README.md' or 'MANIFEST.in' or 'setup.py' ,sign='@xxx@'):
+    def _createFile(self,fileName='LICENSE' or 'README.md' or 'MANIFEST.in'or '.gitignore' or 'setup.py' ,sign='@xxx@'):
         if fileName=='LICENSE':
-            fileNameAbsPath = os.path.realpath(__file__).replace('src\\packing.py', 'resouce\\LICENSE')
+            fileNameAbsPath = os.path.realpath(__file__).replace('src\\packing.py', 'resouce\\LICENSE.tmpl')
         elif fileName=='README.md':
             # os.path.abspath('pyPacking_xhr').split('\\')[-2]
-            fileNameAbsPath = os.path.realpath(__file__).replace('src\\packing.py', 'resouce\\README.md')
+            fileNameAbsPath = os.path.realpath(__file__).replace('src\\packing.py', 'resouce\\README.md.tmpl')
         elif fileName == 'MANIFEST.in':
-            fileNameAbsPath = os.path.realpath(__file__).replace('src\\packing.py', 'resouce\\MANIFEST.in')
+            fileNameAbsPath = os.path.realpath(__file__).replace('src\\packing.py', 'resouce\\MANIFEST.in.tmpl')
+        elif fileName == '.gitignore':
+            fileNameAbsPath = os.path.realpath(__file__).replace('src\\packing.py', 'resouce\\.gitignore.tmpl')
         elif fileName == 'setup.py':
             #x寻找外部包
-            fileNameAbsPath = os.path.realpath(__file__).replace('src\\packing.py', 'resouce\\setup.py')
+            fileNameAbsPath = os.path.realpath(__file__).replace('src\\packing.py', 'resouce\\setup.py.tmpl')
             fp = open(file=fileNameAbsPath, mode='r', encoding='utf-8')
             wp = open(file=self.saveDirPath + '\\' + fileName, mode='w', encoding='utf-8')
             lines=fp.readlines()
@@ -53,6 +56,8 @@ class _createPackingFile:
         wp.writelines(map(lambda x:x.replace(sign,self.pyPackingName),fp.readlines()))
         fp.close()
         wp.close()
+    def createGITIGNORE(self):
+        self._createFile(fileName='.gitignore')
     def createLICENSE(self):
         self._createFile(fileName='LICENSE')
     def createMANIFESE(self):

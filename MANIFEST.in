@@ -1,6 +1,8 @@
 include README.md
 include LICENSE
 include MANIFEST.in
+include demo.py
+
 
 recursive-include pyPacking_xhr/resouce *
 recursive-include pyPacking_xhr/script *
