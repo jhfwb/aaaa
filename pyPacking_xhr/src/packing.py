@@ -78,7 +78,7 @@ class PackingTool:
         """
         os.system('python setup.py sdist bdist_wheel')
         pass
-    def pack(self,pyPackage='',savePath='',options={'version':'1.0','description':'暂无软件简介信息'}):
+    def pack(self,pyPackage='',savePath='',options={'version':'0.0.0.0','description':'暂无软件简介信息'}):
         """创建打包环境,并执行打包语句
 
         :param pyPackage:软件包的名称
