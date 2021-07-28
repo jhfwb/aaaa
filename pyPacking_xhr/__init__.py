@@ -3,7 +3,7 @@
 * 核心方法：class **PackingTool**
 
 * author：xhr
-* 021年7月28日09:30:43
+* 2021年7月28日09:30:43
 * 软件包地址：https://github.com/jhfwb/pyPacking_xhr
 """
 from pyPacking_xhr.src.packing import PackingTool
