@@ -69,6 +69,7 @@ class _createPackingFile:
     def createSRC(self):
         pass
 class PackingTool:
+    """打包工具"""
     def runningSetup(self,savePath=''):
         """
         运行savePath中的setup.py文件，执行打包操作
