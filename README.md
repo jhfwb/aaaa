@@ -6,7 +6,7 @@
 pip install pyPacking_xhr@git+https://github.com/...(后面加上文件的位置)
 
 eg：
-pip install  pyPacking_xhr@git+https://github.com/jhfwb/pyPacking_xhr
+pip install  pyPacking_xhr@git+https://github.com/jhfwb/pyPacking_xhr#egg=pyPacking_xhr
 ```
 
 ## 2.如何开始运行pyPacking_xhr
